@@ -3,8 +3,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 interface User {
-  id: number; 
-  name: string; 
+  id: number;
+  name: string;
 }
 
 function Search() {
@@ -14,7 +14,9 @@ function Search() {
 
   const fetchUsers = async (value: string) => {
     try {
-      const response = await axios.get(`http://localhost:3000/user/${value}`);
+      const response = await axios.get(
+        `https://girman-assignment-new.onrender.com/user/${value}`
+      );
       const users: User[] = response.data.users;
       setUsers(users);
 
